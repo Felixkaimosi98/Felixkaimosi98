@@ -1,1 +1,27 @@
-<!doctype html><html><head><meta charset='utf-8'/><meta name='viewport' content='width=device-width,initial-scale=1'/><title>MKTraders Dashboard</title></head><body><h1>MKTraders</h1><p>Full package ready — set DERIV_API_TOKEN on Render to enable live trading.</p></body></html>
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>MKTraders - Dashboard</title>
+<link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<header class="site-header"><div class="brand">MKTraders</div></header>
+<main class="container card">
+  <h1>Dashboard</h1>
+  <div>
+    <label for="mode">Mode:</label>
+    <select id="mode">
+      <option value="demo">Demo</option>
+      <option value="live">Live</option>
+    </select>
+    <button id="refresh">Refresh Balance</button>
+  </div>
+  <h2 id="status">Status: —</h2>
+  <h3 id="balance">Balance: —</h3>
+  <div id="logs" style="white-space:pre-wrap;background:#021018;padding:10px;border-radius:6px;margin-top:12px;color:#9fb0c8"></div>
+</main>
+<script src="app.js"></script>
+</body>
+</html>

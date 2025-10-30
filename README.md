@@ -1,3 +1,2 @@
-# MKTraders - GitHub-ready package
-
-See DEPLOY.md for deploy instructions.
+# MKTraders Final Package
+Deploy instructions inside.

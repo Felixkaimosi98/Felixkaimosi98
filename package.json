@@ -1,5 +1,5 @@
 {
-  "name": "mktraders-fixed-server",
+  "name": "mktraders-server",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "cors": "^2.8.5",
     "ws": "^8.13.0",
     "dotenv": "^16.0.0",
-    "node-fetch": "^3.3.2",
-    "body-parser": "^1.20.2"
+    "body-parser": "^1.20.2",
+    "uuid": "^9.0.0"
   }
 }

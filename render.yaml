@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: mktraders-fixed-balance
+    name: mktraders-backend
     env: node
     plan: free
     branch: main

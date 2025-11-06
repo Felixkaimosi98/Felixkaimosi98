@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
-const PORT = process.env.PORT || 10000;
+
 const DERIV_APP_ID = process.env.DERIV_APP_ID || '107421';
 const DERIV_API_TOKEN = process.env.DERIV_API_TOKEN || '';
 const DEFAULT_MODE = (process.env.MODE || 'demo').toLowerCase();

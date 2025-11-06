@@ -85,7 +85,9 @@ app.post('/api/buy',(req,res)=>{
   setTimeout(()=>{ try{ tmp.terminate(); }catch(e){}; res.status(500).json({ error:'timeout' }); },15000);
 });
 
-app.get('/api/history', (req,res) => res.json(readStore()));
+app.use(express.static(__dirname + '/public'));
+
+app.get('/api/history', (req, res) => res.json(readStore()));
 
 app.get('*', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');

@@ -1,12 +1,14 @@
 const express = require("express");
-
+const path = require("path");
+const fs = require("fs");
+const WebSocket = require("ws");
+const { v4: uuidv4 } = require("uuid");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
-
 
 const DERIV_APP_ID = process.env.DERIV_APP_ID || '107421';
 const DERIV_API_TOKEN = process.env.DERIV_API_TOKEN || '';
@@ -74,14 +76,7 @@ app.post('/api/buy',(req,res)=>{
   setTimeout(()=>{ try{ tmp.terminate(); }catch(e){}; res.status(500).json({ error:'timeout' }); },15000);
 });
 
-
-const express = require('express');
-const path = require('path');
-const app = express();
-
-// Serve static files
-app.use(express.static(path.join(__dirname, "public")));
-
+// FRONTEND HANDLER (FIX)
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });

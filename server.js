@@ -1,4 +1,4 @@
-
+const path = require("path");
 import express from 'express';
 import cors from 'cors';
 import bodyParser from 'body-parser';
@@ -85,12 +85,16 @@ app.post('/api/buy',(req,res)=>{
   setTimeout(()=>{ try{ tmp.terminate(); }catch(e){}; res.status(500).json({ error:'timeout' }); },15000);
 });
 
-app.use(express.static(__dirname + '/public'));
 
-app.get('/api/history', (req, res) => res.json(readStore()));
+const express = require('express');
+const path = require('path');
+const app = express();
 
-app.get('*', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+// Serve static files
+app.use(express.static(path.join(__dirname, "public")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-app.listen(PORT, () => console.log('MKTraders Node server listening on', PORT));
+app.listen(PORT, ()=> console.log('MKTraders Node server listening on', PORT));
